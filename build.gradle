@@ -1,0 +1,42 @@
+plugins {
+    id 'java'
+}
+
+group 'samit'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    //MongoDB
+    compile 'org.mongodb:mongodb-driver-sync:4.1.0'
+
+    //UNIREST
+    compile 'com.konghq:unirest-java:3.7.04'
+
+    // UTILS
+    compile 'org.apache.httpcomponents:httpcore:4.4.1'
+    
+    // SPARK
+    compile(group: 'com.sparkjava', name: 'spark-core', version: '2.6.0')
+
+    // GSON
+    compile 'com.google.code.gson:gson:2.8.5'
+    
+    // GUICE
+    compile(group: 'com.google.inject.extensions', name: 'guice-multibindings', version: '4.2.0')
+
+    // LOG
+    compile (group: 'log4j', name: 'log4j', version: '1.2.17')
+    compile (group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.25') {
+        exclude (group: 'log4j', module: 'log4j')
+    }
+
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testCompile group: 'org.mockito', name: 'mockito-core', version: '2.3.5'
+}
